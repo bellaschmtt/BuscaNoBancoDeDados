@@ -9,7 +9,7 @@ export default function BuscaAnimalScreen(){
     const [resultado, setResultado] = useState([]);
 
     async function buscarAnimal(){
-        const animalRef = collection(db, 'animais');
+        const animalRef = collection(db, 'BuscaAnimal');
         const BuscaAnimal = query(animalRef, where('NomeDoAnimal', '==', busca));
         const resultadoSnapshot = await getDocs(BuscaAnimal);
         const listaAnimal = resultadoSnapshot.docs.map(doc => doc.data())
